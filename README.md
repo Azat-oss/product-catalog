@@ -58,7 +58,7 @@
 
 ## 📷 Скриншот сайта
 
-![Главная страница](screenshot/Screenshot_1.jpg)
+![Главная страница](screenshot/Screenshot_1.png)
 ![Главная страница](screenshot/Screenshot_2.jpg)
 
 
