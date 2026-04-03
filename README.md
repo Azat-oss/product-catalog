@@ -58,8 +58,8 @@
 
 ## 📷 Скриншот сайта
 
-![Главная страница](screenshots/Screenshot_1.png)
-![Главная страница](screenshots/Screenshot_2.png)
+![Главная страница](screenshot/Screenshot_1.png)
+![Главная страница](screenshot/Screenshot_2.png)
 
 
 ## 👨‍💻 Автор
