@@ -14,6 +14,15 @@ export default function ItemDetail({ item }) {
 
   return (
     <div style={styles.container}>
+      <img
+        src={item.image}
+        alt={item.name}
+        style={styles.detailImage}
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src = "https://placehold.co/400x300/e5e7eb/6b7280?text=Нет+фото";
+        }}
+      />
       <h3 style={styles.title}>{item.name}</h3>
 
       <table style={styles.table}>
@@ -34,9 +43,7 @@ export default function ItemDetail({ item }) {
           </tr>
           <tr>
             <th style={styles.th}>Цена</th>
-            <td style={styles.td}>
-              {item.price.toLocaleString("ru-RU")} ₽
-            </td>
+            <td style={styles.td}>{item.price.toLocaleString("ru-RU")} ₽</td>
           </tr>
           <tr>
             <th style={styles.th}>Рейтинг</th>
@@ -70,9 +77,27 @@ const styles = {
     border: "2px dashed #d1d5db",
     borderRadius: "12px",
   },
-  icon: { fontSize: "48px", marginBottom: "12px" },
-  title: { margin: "0 0 16px 0", fontSize: "20px", color: "#111827" },
-  table: { width: "100%", borderCollapse: "collapse" },
+  icon: {
+    fontSize: "48px",
+    marginBottom: "12px",
+  },
+  detailImage: {
+    width: "100%",
+    height: "200px",
+    objectFit: "contain", // Картинка вписывается целиком
+    backgroundColor: "#f3f4f6", // Фон для пустых областей
+    borderRadius: "8px",
+    marginBottom: "16px",
+  },
+  title: {
+    margin: "0 0 16px 0",
+    fontSize: "20px",
+    color: "#111827",
+  },
+  table: {
+    width: "100%",
+    borderCollapse: "collapse",
+  },
   th: {
     textAlign: "left",
     padding: "8px 12px",

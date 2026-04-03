@@ -7,6 +7,7 @@ export const initialProducts = [
     status: "В наличии",
     price: 64990,
     rating: 4.5,
+    image: "/images/laptop.jpg",
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export const initialProducts = [
     status: "В наличии",
     price: 18500,
     rating: 4.8,
+    image: "/images/chairErgoPro.jpg",
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ export const initialProducts = [
     status: "Нет в наличии",
     price: 32000,
     rating: 4.3,
+    image: "/images/LG UltraWide.jpg",
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ export const initialProducts = [
     status: "В наличии",
     price: 24900,
     rating: 4.1,
+    image: "/images/Loft.jpg",
   },
   {
     id: 5,
@@ -43,6 +47,7 @@ export const initialProducts = [
     status: "В наличии",
     price: 29990,
     rating: 4.9,
+    image: "/images/Sony WH-1000XM5.jpg",
   },
   {
     id: 6,
@@ -52,6 +57,7 @@ export const initialProducts = [
     status: "Нет в наличии",
     price: 4200,
     rating: 4.0,
+    image: "/images/LED.jpg",
   },
   {
     id: 7,
@@ -61,6 +67,7 @@ export const initialProducts = [
     status: "В наличии",
     price: 8900,
     rating: 4.6,
+    image: "/images/Keychron.jpg",
   },
   {
     id: 8,
@@ -70,6 +77,7 @@ export const initialProducts = [
     status: "Нет в наличии",
     price: 3500,
     rating: 3.9,
+    image: "/images/Cub.jpg",
   },
   {
     id: 9,
@@ -79,6 +87,7 @@ export const initialProducts = [
     status: "В наличии",
     price: 7800,
     rating: 4.4,
+    image: "/images/Lamp.jpg",
   },
   {
     id: 10,
@@ -88,5 +97,6 @@ export const initialProducts = [
     status: "В наличии",
     price: 6500,
     rating: 4.7,
+    image: "/images/Logitech C920.jpg",
   },
 ];

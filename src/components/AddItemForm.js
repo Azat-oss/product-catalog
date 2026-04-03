@@ -7,6 +7,7 @@ const initialFormState = {
   status: "В наличии",
   price: "",
   rating: "",
+  image: "", // ← новое поле
 };
 
 export default function AddItemForm({ onAdd, categories }) {
@@ -16,10 +17,7 @@ export default function AddItemForm({ onAdd, categories }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
-    // Сбрасываем ошибку при вводе
-    if (errors[name]) {
-      setErrors((prev) => ({ ...prev, [name]: "" }));
-    }
+    if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
   const validate = () => {
@@ -48,6 +46,8 @@ export default function AddItemForm({ onAdd, categories }) {
       status: form.status,
       price: Number(form.price),
       rating: Number(form.rating) || 0,
+      // Если URL не указан, ставим заглушку
+      image: form.image.trim() || "https://placehold.co/400x300/e5e7eb/6b7280?text=Нет+фото",
     };
 
     onAdd(newItem);
@@ -92,14 +92,10 @@ export default function AddItemForm({ onAdd, categories }) {
           >
             <option value="">— Выберите —</option>
             {categories.map((cat) => (
-              <option key={cat} value={cat}>
-                {cat}
-              </option>
+              <option key={cat} value={cat}>{cat}</option>
             ))}
           </select>
-          {errors.category && (
-            <span style={styles.error}>{errors.category}</span>
-          )}
+          {errors.category && <span style={styles.error}>{errors.category}</span>}
         </div>
       </div>
 
@@ -113,9 +109,7 @@ export default function AddItemForm({ onAdd, categories }) {
             style={{ ...inputStyle("description"), minHeight: "60px", resize: "vertical" }}
             placeholder="Краткое описание товара"
           />
-          {errors.description && (
-            <span style={styles.error}>{errors.description}</span>
-          )}
+          {errors.description && <span style={styles.error}>{errors.description}</span>}
         </div>
       </div>
 
@@ -159,6 +153,20 @@ export default function AddItemForm({ onAdd, categories }) {
             min="0"
             max="5"
             step="0.1"
+          />
+        </div>
+      </div>
+
+      {/* ← Поле для URL картинки */}
+      <div style={styles.row}>
+        <div style={styles.field}>
+          <label style={styles.label}>URL картинки</label>
+          <input
+            name="image"
+            value={form.image}
+            onChange={handleChange}
+            style={inputStyle("image")}
+            placeholder="https://example.com/image.jpg"
           />
         </div>
       </div>
